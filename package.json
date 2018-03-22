@@ -1,0 +1,23 @@
+{
+  "name": "backbone-fusioncharts",
+  "version": "1.0.0",
+  "description": "Backbone wrapper for FusionCharts library",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack-cli"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fusioncharts": "^3.12.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "webpack": "^4.2.0"
+  }
+}
