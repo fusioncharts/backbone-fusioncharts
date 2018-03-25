@@ -11,22 +11,13 @@ const dataSource = {
 };
 
 const fc = new BackboneFusionCharts({
-  el: '#fusioncharts',
-  type: 'Pie2D',
+  renderAt: 'fusioncharts',
+  type: 'Pie2d',
   dataSource,
 });
 
 setTimeout(() => {
-  fc.model.set('type', {
-    chart: {
-      caption: 'Vue FusionCharts Sample',
-      theme: 'fint',
-    },
-    data: [
-      { value: 1.9 },
-      { value: 3 },
-      { value: 2.1 },
-    ],
-  });
+  fc.model.set('renderAt', 'fusioncharts2');
 }, 3000);
 
+console.log(fc);

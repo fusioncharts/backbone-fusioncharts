@@ -91,29 +91,20 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 
-var _utils = __webpack_require__(/*! ./utils/utils */ "./src/utils/utils.js");
-
-var utils = _interopRequireWildcard(_utils);
-
 var _view = __webpack_require__(/*! ./view */ "./src/view.js");
 
 var _view2 = _interopRequireDefault(_view);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var BackboneFusionCharts = function BackboneFusionCharts(options) {
   _classCallCheck(this, BackboneFusionCharts);
 
-  var modelProps = utils.deepCopyOf(options);
-  delete modelProps.el;
-  this.model = new Backbone.Model(modelProps);
+  this.model = new Backbone.Model(options);
 
   this.view = new _view2.default({
-    el: options.el,
     model: this.model
   });
 };
@@ -135,7 +126,7 @@ module.exports = BackboneFusionCharts;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ['type', 'id', 'width', 'height', 'dataFormat', 'dataSource', 'events', 'link', 'showDataLoadingMessage', 'showChartLoadingMessage', 'baseChartMessageFont', 'baseChartMessageFontSize', 'baseChartMessageColor', 'dataLoadStartMessage', 'dataLoadErrorMessage', 'dataInvalidMessage', 'dataEmptyMessage', 'typeNotSupportedMessage', 'loadMessage', 'renderErrorMessage', 'containerBackgroundColor', 'containerBackgroundOpacity', 'containerClassName', 'baseChartMessageImageHAlign', 'baseChartMessageImageVAlign', 'baseChartMessageImageAlpha', 'baseChartMessageImageScale', 'typeNotSupportedMessageImageHAalign', 'typeNotSupportedMessageImageVAlign', 'typeNotSupportedMessageImageAlpha', 'typeNotSupportedMessageImageScale', 'dataLoadErrorMessageImageHAlign', 'dataLoadErrorMessageImageVAlign', 'dataLoadErrorMessageImageAlpha', 'dataLoadErrorMessageImageScale', 'dataLoadStartMessageImageHAlign', 'dataLoadStartMessageImageVAlign', 'dataLoadStartMessageImageAlpha', 'dataLoadStartMessageImageScale', 'dataInvalidMessageImageHAlign', 'dataInvalidMessageImageVAlign', 'dataInvalidMessageImageAlpha', 'dataInvalidMessageImageScale', 'dataEmptyMessageImageHAlign', 'dataEmptyMessageImageVAlign', 'dataEmptyMessageImageAlpha', 'dataEmptyMessageImageScale', 'renderErrorMessageImageHAlign', 'renderErrorMessageImageVAlign', 'renderErrorMessageImageAlpha', 'renderErrorMessageImageScale', 'loadMessageImageHAlign', 'loadMessageImageVAlign', 'loadMessageImageAlpha', 'loadMessageImageScale'];
+exports.default = ['renderAt', 'type', 'id', 'width', 'height', 'dataFormat', 'dataSource', 'events', 'link', 'showDataLoadingMessage', 'showChartLoadingMessage', 'baseChartMessageFont', 'baseChartMessageFontSize', 'baseChartMessageColor', 'dataLoadStartMessage', 'dataLoadErrorMessage', 'dataInvalidMessage', 'dataEmptyMessage', 'typeNotSupportedMessage', 'loadMessage', 'renderErrorMessage', 'containerBackgroundColor', 'containerBackgroundOpacity', 'containerClassName', 'baseChartMessageImageHAlign', 'baseChartMessageImageVAlign', 'baseChartMessageImageAlpha', 'baseChartMessageImageScale', 'typeNotSupportedMessageImageHAalign', 'typeNotSupportedMessageImageVAlign', 'typeNotSupportedMessageImageAlpha', 'typeNotSupportedMessageImageScale', 'dataLoadErrorMessageImageHAlign', 'dataLoadErrorMessageImageVAlign', 'dataLoadErrorMessageImageAlpha', 'dataLoadErrorMessageImageScale', 'dataLoadStartMessageImageHAlign', 'dataLoadStartMessageImageVAlign', 'dataLoadStartMessageImageAlpha', 'dataLoadStartMessageImageScale', 'dataInvalidMessageImageHAlign', 'dataInvalidMessageImageVAlign', 'dataInvalidMessageImageAlpha', 'dataInvalidMessageImageScale', 'dataEmptyMessageImageHAlign', 'dataEmptyMessageImageVAlign', 'dataEmptyMessageImageAlpha', 'dataEmptyMessageImageScale', 'renderErrorMessageImageHAlign', 'renderErrorMessageImageVAlign', 'renderErrorMessageImageAlpha', 'renderErrorMessageImageScale', 'loadMessageImageHAlign', 'loadMessageImageVAlign', 'loadMessageImageAlpha', 'loadMessageImageScale'];
 module.exports = exports['default'];
 
 /***/ }),
@@ -231,10 +222,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = Backbone.View.extend({
   initialize: function initialize() {
     this.model.bind('change', this.onChange.bind(this));
-
     this.chartConfig = this.model.toJSON();
-    this.chartConfig.renderAt = this.el;
-
     this.render();
   },
   onChange: function onChange(nextProps) {
@@ -242,6 +230,7 @@ exports.default = Backbone.View.extend({
     var oldOptions = this.chartConfig;
     var optionsUpdatedNatively = ['width', 'height', 'type', 'dataFormat', 'dataSource', 'events'];
 
+    this.checkAndUpdateChartRenderAt(currentOptions, oldOptions);
     this.checkAndUpdateChartDimensions(currentOptions, oldOptions);
     this.checkAndUpdateChartType(currentOptions, oldOptions);
     this.checkAndUpdateChartData(currentOptions, oldOptions);
@@ -251,6 +240,17 @@ exports.default = Backbone.View.extend({
     }), currentOptions, oldOptions);
 
     this.oldOptions = currentOptions;
+  },
+  checkAndUpdateChartRenderAt: function checkAndUpdateChartRenderAt(currentOptions, oldOptions) {
+    var currRenderAt = currentOptions.renderAt;
+    var oldRenderAt = oldOptions.renderAt;
+
+    if (String(currRenderAt) !== String(oldRenderAt)) {
+      this.chart.dispose();
+
+      this.chartConfig.renderAt = currRenderAt;
+      this.render();
+    }
   },
   checkAndUpdateChartDimensions: function checkAndUpdateChartDimensions(currentOptions, oldOptions) {
     var currWidth = currentOptions.width;

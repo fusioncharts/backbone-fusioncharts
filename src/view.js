@@ -6,10 +6,7 @@ import * as utils from './utils/utils';
 export default Backbone.View.extend({
   initialize() {
     this.model.bind('change', this.onChange.bind(this));
-
     this.chartConfig = this.model.toJSON();
-    this.chartConfig.renderAt = this.el;
-
     this.render();
   },
 
@@ -25,6 +22,7 @@ export default Backbone.View.extend({
       'events',
     ];
 
+    this.checkAndUpdateChartRenderAt(currentOptions, oldOptions);
     this.checkAndUpdateChartDimensions(currentOptions, oldOptions);
     this.checkAndUpdateChartType(currentOptions, oldOptions);
     this.checkAndUpdateChartData(currentOptions, oldOptions);
@@ -36,6 +34,18 @@ export default Backbone.View.extend({
     );
 
     this.oldOptions = currentOptions;
+  },
+
+  checkAndUpdateChartRenderAt(currentOptions, oldOptions) {
+    const currRenderAt = currentOptions.renderAt;
+    const oldRenderAt = oldOptions.renderAt;
+
+    if (String(currRenderAt) !== String(oldRenderAt)) {
+      this.chart.dispose();
+
+      this.chartConfig.renderAt = currRenderAt;
+      this.render();
+    }
   },
 
   checkAndUpdateChartDimensions(currentOptions, oldOptions) {
