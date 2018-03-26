@@ -2,9 +2,12 @@
   "name": "backbone-fusioncharts",
   "version": "1.0.0",
   "description": "Backbone wrapper for FusionCharts library",
-  "main": "index.js",
+  "main": "dist/backbone-fusioncharts.js",
   "scripts": {
-    "build": "webpack-cli"
+    "build": "npm run build:dev && npm run build:prod",
+    "build:dev": "webpack-cli --mode development --devtool source-map --config webpack.config.js",
+    "build:prod": "webpack-cli --mode production --output-filename backbone-fusioncharts.min.js --config webpack.config.js",
+    "build:example": "webpack-cli --mode development --config webpack.config.example.js"
   },
   "license": "MIT",
   "devDependencies": {
