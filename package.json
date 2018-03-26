@@ -1,7 +1,32 @@
 {
   "name": "backbone-fusioncharts",
   "version": "1.0.0",
-  "description": "Backbone wrapper for FusionCharts library",
+  "license": "MIT",
+  "description": "Simple and Lightweight Backbone wrapper for FusionCharts JavaScript Charting Library",
+  "author": {
+    "name": "FusionCharts",
+    "email": "support@fusioncharts.com"
+  },
+  "contributors": [
+    {
+      "name": "Jimut Dhali",
+      "email": "jimut@fusioncharts.com",
+      "url": "https://github.com/jimut"
+    },
+    {
+      "name": "Subrata Mal",
+      "email": "subrata@fusioncharts.com",
+      "url": "https://github.com/subratamal"
+    }
+  ],
+  "homepage": "https://github.com/fusioncharts/backbone-fusioncharts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusioncharts/backbone-fusioncharts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fusioncharts/backbone-fusioncharts/issues"
+  },
   "main": "dist/backbone-fusioncharts.js",
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
@@ -9,7 +34,6 @@
     "build:prod": "webpack-cli --mode production --output-filename backbone-fusioncharts.min.js --config webpack.config.js",
     "build:example": "webpack-cli --mode development --config webpack.config.example.js"
   },
-  "license": "MIT",
   "devDependencies": {
     "fusioncharts": "^3.12.2",
     "babel-core": "^6.26.0",
@@ -20,5 +44,17 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
     "webpack": "^4.2.0"
-  }
+  },
+  "keywords": [
+    "backbone",
+    "fusioncharts",
+    "javascript-charts",
+    "interactive-charts",
+    "charts",
+    "graphs",
+    "visualization",
+    "data-visualization",
+    "dataviz",
+    "webpack"
+  ]
 }
