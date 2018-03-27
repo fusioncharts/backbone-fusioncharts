@@ -17,4 +17,14 @@ module.exports = {
       },
     ],
   },
+  externals: [
+    {
+      backbone: {
+        root: 'Backbone',
+        commonjs2: 'backbone',
+        commonjs: 'backbone',
+        amd: 'backbone',
+      },
+    },
+  ],
 };
