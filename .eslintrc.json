@@ -7,5 +7,8 @@
         "Backbone": true,
         "FusionCharts": true,
         "BackboneFusionCharts": true
+    },
+    "env": {
+        "mocha": true
     }
 }

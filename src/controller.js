@@ -1,3 +1,4 @@
+import Backbone from 'backbone';
 import FCView from './view';
 
 class BackboneFusionCharts {

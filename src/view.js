@@ -1,18 +1,19 @@
 /* eslint-disable no-prototype-builtins, no-plusplus, no-param-reassign */
 
+import Backbone from 'backbone';
 import fusionChartsOptions from './utils/options';
 import * as utils from './utils/utils';
 
 export default Backbone.View.extend({
   initialize() {
     this.model.bind('change', this.onChange.bind(this));
-    this.chartConfig = this.model.toJSON();
+    this.props = this.model.toJSON();
     this.render();
   },
 
   onChange(nextProps) {
     const currentOptions = this.resolveChartOptions(nextProps.toJSON());
-    const oldOptions = this.chartConfig;
+    const { oldOptions } = this;
     const optionsUpdatedNatively = [
       'width',
       'height',
@@ -43,7 +44,7 @@ export default Backbone.View.extend({
     if (String(currRenderAt) !== String(oldRenderAt)) {
       this.chart.dispose();
 
-      this.chartConfig.renderAt = currRenderAt;
+      this.props.renderAt = currRenderAt;
       this.render();
     }
   },
@@ -210,8 +211,11 @@ export default Backbone.View.extend({
   },
 
   render() {
-    this.chart = new FusionCharts(this.chartConfig);
+    const currentOptions = this.resolveChartOptions(this.props);
+
+    this.chart = new FusionCharts(currentOptions);
     this.chart.render();
+    this.oldOptions = currentOptions;
 
     return this;
   },
