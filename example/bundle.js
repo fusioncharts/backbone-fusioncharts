@@ -648,7 +648,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var dataSource = {
   chart: {
-    caption: 'Vue FusionCharts Sample',
+    caption: 'Backbone FusionCharts Sample',
     theme: 'fint'
   },
   data: [{ value: 1.9 }, { value: 2.3 }, { value: 2.1 }]

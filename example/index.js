@@ -2,7 +2,7 @@ import BackboneFusionCharts from '../dist/backbone-fusioncharts';
 
 const dataSource = {
   chart: {
-    caption: 'Vue FusionCharts Sample',
+    caption: 'Backbone FusionCharts Sample',
     theme: 'fint',
   },
   data: [
