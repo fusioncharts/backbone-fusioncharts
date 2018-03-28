@@ -12,7 +12,7 @@ To install `backbone-fusioncharts`, run:
 $ npm install backbone-fusioncharts --save
 ```
 
-Also install `fusionCharts`, if it is not already installed:
+Also install `fusioncharts`, if it is not already installed:
 
 ```bash
 $ npm install fusioncharts --save
