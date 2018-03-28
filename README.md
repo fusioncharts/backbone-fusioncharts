@@ -91,7 +91,7 @@ $ npm test
 
 ## Contributing
 
-* Clone the repository.
+* Clone the repository
 * Install dependencies
 * Build the library
 * Build the sample script
