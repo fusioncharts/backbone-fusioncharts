@@ -12,7 +12,12 @@ $ npm install backbone-fusioncharts --save
 
 ### Step 2: Include the `BackboneFusionCharts` controller
 
-You can include the controller either through browser script tag or using any of the CommonJS, ES6 or AMD include style.
+You can include the controller either through HTML script tag or using any of the CommonJS, ES6 or AMD include style.
+
+HTML
+```html
+<script src="./node_modules/backbone-fusioncharts/dist/backbone-fusioncharts.min.js" type="text/javascript"></script>
+```
 
 CommonJS
 ```js
