@@ -1,18 +1,28 @@
-# Backbone FusionCharts
+#### [Demos and Documentation](https://fusioncharts.github.io/backbone-fusioncharts/)
 
-## Quick Start
+# backbone-fusioncharts
 
-### Step 1: Install the `backbone-fusioncharts` wrapper
+A simple and lightweight Backbone wrapper which provides bindings for FusionCharts JavaScript Charting Library. It easily adds rich and interactive charts to any Backbone Project.
 
-In the terminal run the following command:
+## Installation
 
-```
+To install `backbone-fusioncharts`, run:
+
+```bash
 $ npm install backbone-fusioncharts --save
 ```
 
-### Step 2: Include the `BackboneFusionCharts` controller
+Also install `fusionCharts`, if it is not already installed:
 
-You can include the controller either through HTML script tag or using any of the CommonJS, ES6 or AMD include style.
+```bash
+$ npm install fusioncharts --save
+```
+
+## Getting Started
+
+After installing `backbone-fusioncharts`, import it in your Backbone app:
+
+Include the controller either through HTML script tag or using any of the CommonJS, ES6 or AMD include style.
 
 HTML
 ```html
@@ -35,8 +45,6 @@ define(['backbone-fusioncharts'], (BackboneFusionCharts) => {
 
 });
 ```
-
-### Step 3: Render your chart
 
 For rendering a simple chart
 
@@ -74,3 +82,33 @@ Here's the HTML template for the above example
 ```html
 <div id="fusioncharts"></div>
 ```
+
+## Test
+
+```sh
+$ npm test
+```
+
+## Contributing
+
+* Clone the repository.
+* Install dependencies
+* Build the library
+* Build the sample script
+* Open the sample template in your browser 
+
+```sh
+$ git clone https://github.com/fusioncharts/backbone-fusioncharts.git
+$ cd backbone-fusioncharts
+$ npm i
+$ npm run build 
+$ npm run build:example
+```
+
+To build, run:
+
+```sh
+$ npm run build
+```
+
+### [Demos and Documentation](https://fusioncharts.github.io/backbone-fusioncharts/)
