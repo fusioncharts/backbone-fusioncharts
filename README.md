@@ -24,19 +24,19 @@ To install `fusioncharts`, run:
 $ npm install fusioncharts --save
 ```
 
-Import `backbone-fusioncharts` in your Backbone app using any of the CommonJS, ES6 or AMD include style.
+Import `backbone-fusioncharts` in your Backbone web application using any of the CommonJS, ES6 or AMD include style.
 
-CommonJS
+**CommonJS**
 ```js
 const BackboneFusionCharts = require('backbone-fusioncharts');
 ```
 
-ES6
+**ES6**
 ```js
 import BackboneFusionCharts from 'backbone-fusioncharts';
 ```
 
-AMD
+**AMD**
 ```js
 define(['backbone-fusioncharts'], (BackboneFusionCharts) => {
 
@@ -63,9 +63,9 @@ To install `fusioncharts`, run:
 $ bower install fusioncharts --save
 ```
 
-Import `backbone-fusioncharts` in your Backbone app through HTML script tag.
+Import `backbone-fusioncharts` in your Backbone web application through HTML script tag.
 
-HTML
+**HTML**
 ```html
 <script src="bower_components/backbone-fusioncharts/dist/backbone-fusioncharts.min.js" type="text/javascript"></script>
 ```
