@@ -1,0 +1,17 @@
+{
+  "name": "backbone-fc",
+  "logo": "wrapper/logo.png",
+  "heading": "Backbone-FusionCharts",
+  "subHeading": "Simple and Lightweight Backbone wrapper for FusionCharts JavaScript Charting Library",
+  "about": "The Backbone-FusionCharts wrapper lets you easily include FusionCharts in your Backbone projects. It easily adds interactive chart to your Backbone applications.",
+  "features": [
+    "Adds a chart using just a single controller.",
+    "Auto-updates the chart object when the data source is modified.",
+    "Adds a chart from a JSON URL, from a XML URL, or using just JS Objects.",
+    "Allows to include interactivity between Javascript charts.",
+    "Offers advanced control by giving you access to the complete FusionCharts object (that contains the chart configuration)."
+  ],
+  "githubRepo": "https://github.com/fusioncharts/backbone-fusioncharts",
+  "issuesURL": "https://github.com/fusioncharts/backbone-fusioncharts/issues",
+  "newIssueURL": "https://github.com/fusioncharts/backbone-fusioncharts/issues/new"
+}

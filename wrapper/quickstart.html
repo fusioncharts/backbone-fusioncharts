@@ -1,0 +1,73 @@
+<div class="qs-section">
+    <h3 class="qs-heading">
+        Step 1: Install the <span class="qs-highlight">backbone-fusioncharts</span> wrapper
+    </h3>
+    <p class="qs-text">
+        In the terminal run the following command:
+    </p>
+    <pre class="qs-code"><code class="language-javascript">$ npm install backbone-fusioncharts --save</code></pre>
+</div>
+
+<div class="qs-section">
+    <h3 class="qs-heading">
+        Step 2: Include the <span class="qs-highlight">BackboneFusionCharts</span> controller
+    </h3>
+    <p class="qs-text">
+        You can include the controller either through HTML script tag or using any of the CommonJS, ES6 or AMD include style.
+    </p>
+    <p class="qs-text">
+        HTML
+    </p>
+    <pre class="qs-code"><code class="language-html">&lt;script src=&quot;./node_modules/backbone-fusioncharts/dist/backbone-fusioncharts.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+    <p class="qs-text">
+        CommonJS
+    </p>
+    <pre class="qs-code"><code class="language-javascript">const BackboneFusionCharts = require('backbone-fusioncharts');</code></pre>
+    <p class="qs-text">
+        ES6
+    </p>
+    <pre class="qs-code"><code class="language-javascript">import BackboneFusionCharts from 'backbone-fusioncharts';</code></pre>
+    <p class="qs-text">
+        AMD
+    </p>
+    <pre class="qs-code"><code class="language-javascript">define(['backbone-fusioncharts'], (BackboneFusionCharts) => { });</code></pre>
+</div>
+
+<div class="qs-section">
+    <h3 class="qs-heading">
+        Step 3: Render your chart
+    </h3>
+    <p class="qs-text">
+        For rendering a simple chart
+    </p>
+    <pre class="qs-code"><code class="language-javascript">import BackboneFusionCharts from 'backbone-fusioncharts';
+
+const dataSource = {
+  chart: {
+    caption: 'Backbone FusionCharts Sample',
+    theme: 'fint',
+  },
+  data: [
+    { value: 1.9 },
+    { value: 2.3 },
+    { value: 2.1 },
+  ],
+};
+
+const fc = new BackboneFusionCharts({
+  renderAt: 'fusioncharts',
+  type: 'Pie2d',
+  dataSource,
+});
+
+
+fc.model // This is the model
+
+fc.view // This is the view
+
+fc.view.chart // This is the FusionCharts instance</code></pre>
+    <p class="qs-text" style="margin-top: 10px;">
+        Here's the HTML template for the above example
+    </p>
+    <pre class="qs-code"><code class="language-html">&lt;div id=&quot;fusioncharts&quot;&gt;&lt;/div&gt;</code></pre>
+</div>
