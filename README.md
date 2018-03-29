@@ -12,13 +12,13 @@ To install `backbone-fusioncharts`, run:
 $ npm install backbone-fusioncharts --save
 ```
 
-Also install `backbone`, if it is not already installed:
+To install `backbone`, run:
 
 ```bash
 $ npm install backbone --save
 ```
 
-Also install `fusioncharts`, if it is not already installed:
+To install `fusioncharts`, run:
 
 ```bash
 $ npm install fusioncharts --save
@@ -53,13 +53,13 @@ To install `backbone-fusioncharts`, run:
 $ bower install backbone-fusioncharts --save
 ```
 
-Also install `backbone`, if it is not already installed:
+To install `backbone`, run:
 
 ```bash
 $ bower install backbone --save
 ```
 
-Also install `fusioncharts`, if it is not already installed:
+To install `fusioncharts`, run:
 
 ```bash
 $ bower install fusioncharts --save
