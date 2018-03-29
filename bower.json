@@ -1,0 +1,37 @@
+{
+  "name": "backbone-fusioncharts",
+  "description": "Simple and Lightweight Backbone wrapper for FusionCharts JavaScript Charting Library",
+  "main": "dist/backbone-fusioncharts.js",
+  "moduleType": "globals",
+  "authors": [
+    {
+      "name": "FusionCharts",
+      "email": "support@fusioncharts.com"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "backbone",
+    "fusioncharts",
+    "javascript-charts",
+    "interactive-charts",
+    "charts",
+    "graphs",
+    "visualization",
+    "data-visualization",
+    "dataviz",
+    "webpack"
+  ],
+  "homepage": "https://github.com/fusioncharts/backbone-fusioncharts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fusioncharts/backbone-fusioncharts.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
