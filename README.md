@@ -24,8 +24,6 @@ Also install `fusioncharts`, if it is not already installed:
 $ npm install fusioncharts --save
 ```
 
-### Getting Started
-
 After installing `backbone-fusioncharts`, import it in your Backbone app:
 
 Include the controller using any of the CommonJS, ES6 or AMD include style.
@@ -45,43 +43,6 @@ AMD
 define(['backbone-fusioncharts'], (BackboneFusionCharts) => {
 
 });
-```
-
-For rendering a simple chart
-
-```js
-import BackboneFusionCharts from 'backbone-fusioncharts';
-
-const dataSource = {
-  chart: {
-    caption: 'Backbone FusionCharts Sample',
-    theme: 'fint',
-  },
-  data: [
-    { value: 1.9 },
-    { value: 2.3 },
-    { value: 2.1 },
-  ],
-};
-
-const fc = new BackboneFusionCharts({
-  renderAt: 'fusioncharts',
-  type: 'Pie2d',
-  dataSource,
-});
-
-
-fc.model // This is the model
-
-fc.view // This is the view
-
-fc.view.chart // This is the FusionCharts instance
-```
-
-Here's the HTML template for the above example
-
-```html
-<div id="fusioncharts"></div>
 ```
 
 ## Installation from bower
@@ -104,8 +65,6 @@ Also install `fusioncharts`, if it is not already installed:
 $ bower install fusioncharts --save
 ```
 
-### Getting Started
-
 After installing `backbone-fusioncharts`, import it in your Backbone app:
 
 Include the controller through HTML script tag.
@@ -115,7 +74,9 @@ HTML
 <script src="bower_components/backbone-fusioncharts/dist/backbone-fusioncharts.min.js" type="text/javascript"></script>
 ```
 
-For rendering a simple chart
+## Getting Started
+
+For rendering a simple chart use the following code 
 
 ```js
 const dataSource = {
