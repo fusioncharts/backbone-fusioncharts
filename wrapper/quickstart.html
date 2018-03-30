@@ -1,0 +1,193 @@
+<style>
+    .quickstart section {
+        display: none;
+        padding: 20px 0 0;
+        border-top: 1px solid #ddd;
+    }
+    .quickstart input {
+        display: none;
+    }
+    .quickstart label {
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 15px 25px;
+        font-weight: 600;
+        text-align: center;
+        color: #bbb;
+        border: 1px solid transparent;
+    }
+    .quickstart label:hover {
+        color: #888;
+        cursor: pointer;
+    }
+    .quickstart input:checked + label {
+        color: #555;
+        border: 1px solid #ddd;
+        border-top: 2px solid orange;
+        border-bottom: 1px solid #fff;
+    }
+    .quickstart #using-npm:checked ~ #using-npm-content,
+    .quickstart #using-bower:checked ~ #using-bower-content {
+        display: block;
+    }
+    @media screen and (max-width: 650px) {
+        .quickstart label {
+            font-size: 0;
+        }
+        .quickstart label:before {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .quickstart label {
+            padding: 15px;
+        }
+    }
+</style>
+
+<div class="quickstart">
+    <div style="padding-top: 10px;"></div>
+    
+    <input id="using-npm" type="radio" name="tabs" checked>
+    <label for="using-npm">Using NPM</label>
+    
+    <input id="using-bower" type="radio" name="tabs">
+    <label for="using-bower">Using Bower</label>
+    
+    <section id="using-npm-content">
+        <div class="qs-section">
+            <h3 class="qs-heading">
+                Step 1: Install the
+                <span class="qs-highlight">backbone-fusioncharts</span> wrapper
+            </h3>
+            <p class="qs-text">
+                In the terminal run the following command:
+            </p>
+            <pre class="qs-code"><code class="language-javascript">$ npm install backbone-fusioncharts --save</code></pre>
+        </div>
+    
+        <div class="qs-section">
+            <h3 class="qs-heading">
+                Step 2: Include the
+                <span class="qs-highlight">BackboneFusionCharts</span> controller
+            </h3>
+            <p class="qs-text">
+                Import backbone-fusioncharts in your Backbone web application using any of the CommonJS, ES6 or AMD include style.
+            </p>
+            <p class="qs-text">
+                CommonJS
+            </p>
+            <pre class="qs-code"><code class="language-javascript">const BackboneFusionCharts = require('backbone-fusioncharts');</code></pre>
+            <p class="qs-text">
+                ES6
+            </p>
+            <pre class="qs-code"><code class="language-javascript">import BackboneFusionCharts from 'backbone-fusioncharts';</code></pre>
+            <p class="qs-text">
+                AMD
+            </p>
+            <pre class="qs-code"><code class="language-javascript">define(['backbone-fusioncharts'], (BackboneFusionCharts) => { });</code></pre>
+        </div>
+    
+        <div class="qs-section">
+            <h3 class="qs-heading">
+                Step 3: Render your chart
+            </h3>
+            <p class="qs-text">
+                For rendering a simple chart
+            </p>
+            <pre class="qs-code"><code class="language-javascript">const dataSource = {
+    chart: {
+        caption: 'Backbone FusionCharts Sample',
+        theme: 'fint',
+    },
+    data: [
+        { value: 1.9 },
+        { value: 2.3 },
+        { value: 2.1 },
+    ],
+};
+
+const fc = new BackboneFusionCharts({
+    renderAt: 'fusioncharts',
+    type: 'Pie2d',
+    dataSource,
+});
+
+
+fc.model // This is the model
+
+fc.view // This is the view
+
+fc.view.chart // This is the FusionCharts instance</code></pre>
+            <p class="qs-text" style="margin-top: 10px;">
+                Here's the HTML template for the above example
+            </p>
+            <pre class="qs-code"><code class="language-html">&lt;div id=&quot;fusioncharts&quot;&gt;&lt;/div&gt;</code></pre>
+        </div>
+    </section>
+    
+    <section id="using-bower-content">
+        <div class="qs-section">
+            <h3 class="qs-heading">
+                Step 1: Install the
+                <span class="qs-highlight">backbone-fusioncharts</span> wrapper
+            </h3>
+            <p class="qs-text">
+                In the terminal run the following command:
+            </p>
+            <pre class="qs-code"><code class="language-javascript">$ bower install backbone-fusioncharts --save</code></pre>
+        </div>
+    
+        <div class="qs-section">
+            <h3 class="qs-heading">
+                Step 2: Include the
+                <span class="qs-highlight">BackboneFusionCharts</span> controller
+            </h3>
+            <p class="qs-text">
+                Import backbone-fusioncharts in your Backbone web application through HTML script tag.
+            </p>
+            <p class="qs-text">
+                HTML
+            </p>
+            <pre class="qs-code"><code class="language-html">&lt;script src=&quot;bower_components/backbone-fusioncharts/dist/backbone-fusioncharts.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+        </div>
+    
+        <div class="qs-section">
+            <h3 class="qs-heading">
+                Step 3: Render your chart
+            </h3>
+            <p class="qs-text">
+                For rendering a simple chart
+            </p>
+            <pre class="qs-code"><code class="language-javascript">const dataSource = {
+    chart: {
+        caption: 'Backbone FusionCharts Sample',
+        theme: 'fint',
+    },
+    data: [
+        { value: 1.9 },
+        { value: 2.3 },
+        { value: 2.1 },
+    ],
+};
+
+const fc = new BackboneFusionCharts({
+    renderAt: 'fusioncharts',
+    type: 'Pie2d',
+    dataSource,
+});
+
+
+fc.model // This is the model
+
+fc.view // This is the view
+
+fc.view.chart // This is the FusionCharts instance</code></pre>
+            <p class="qs-text" style="margin-top: 10px;">
+                Here's the HTML template for the above example
+            </p>
+            <pre class="qs-code"><code class="language-html">&lt;div id=&quot;fusioncharts&quot;&gt;&lt;/div&gt;</code></pre>
+        </div>
+    </section>
+</div>
